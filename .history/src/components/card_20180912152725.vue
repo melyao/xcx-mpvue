@@ -18,6 +18,7 @@
                   }}</span>
       </div>
       <div class="button agree">
+        <!-- <img src="../../static/img/triangle.png" class="icon"/> -->
         <span>阅读 {{item.visit_count}}</span>
       </div>
       <div class="comment">

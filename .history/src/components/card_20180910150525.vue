@@ -7,7 +7,7 @@
     <div class="content">
       <div class="title">{{item.title}}</div>
       <div class="article">
-        {{item.content}}
+        {{item.content + `111`}}
       </div>
     </div>
     <div class="bottom">
@@ -18,6 +18,7 @@
                   }}</span>
       </div>
       <div class="button agree">
+        <img src="../../static/img/triangle.png" class="icon"/>
         <span>阅读 {{item.visit_count}}</span>
       </div>
       <div class="comment">

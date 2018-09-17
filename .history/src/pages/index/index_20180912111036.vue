@@ -1,8 +1,11 @@
 <template>
   <div class="container" >
+    <p >
+      {{'&lt;script/&gt;'}}
+    </p>
     <div class="usermotto">
       <!-- <template v-for="item in data"> -->
-        <card v-for="item in list" :key="item.id" :item="item"></card>
+        <!-- <card v-for="item in list" :key="item.id" :item="item"></card> -->
       <!-- </template> -->
     </div>
   </div>
@@ -14,6 +17,7 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      str: '&lt;script/&gt;',
       list: [
         {
         id: '',

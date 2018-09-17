@@ -1,16 +1,13 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "page/detail/main"
-    ],
+    "pages/logs/main"  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
     "onReachBottomDistance":50,
-    "onPullDownRefresh": true,
-    "enablePullDownRefresh": true
+    "onPullDownRefresh": true
   }
 }

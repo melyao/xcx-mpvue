@@ -72,12 +72,10 @@ export default {
       .then(function (response) {
         if (response.success) {
           
-          if(self.page === 1) {
+          if(self.page === 0) {
             self.list = response.data;
           } else {
-            for (let i = 0;i<response.data.length; i++) {
-              self.list.push(response.data[i]);
-            }
+            self.list.push(response.data);
           }
           self.page++;
         }
@@ -99,7 +97,7 @@ export default {
   },
   onPullDownRefresh(){
     // wx.showToast({title: '222222222'});
-    this.page = 1;
+    this.page = 0;
     this.getList();
   }
 }

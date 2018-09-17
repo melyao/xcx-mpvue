@@ -1,5 +1,8 @@
 <template>
   <div class="container" >
+    <div v-html="'&lt;script/&gt;'">
+    
+    </div>
     <div class="usermotto">
       <!-- <template v-for="item in data"> -->
         <card v-for="item in list" :key="item.id" :item="item"></card>

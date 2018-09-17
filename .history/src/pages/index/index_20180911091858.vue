@@ -15,25 +15,24 @@ export default {
   data () {
     return {
       list: [
-        {
-        id: '',
-        author: {
-          avatar_url: '',
-          loginname: ''
-        },
-        author_id: '',
-        content: '',
-        create_at: '',
-        good: false,
-        last_reply_at: '',
-        reply_count: '',
-        tab: '',
-        title: '',
-        top: false,
-        visit_count: ''
-      }
-      ],
-      page: 1
+      //   {
+      //   id: '',
+      //   author: {
+      //     avatar_url: '',
+      //     loginname: ''
+      //   },
+      //   author_id: '',
+      //   content: '',
+      //   create_at: '',
+      //   good: false,
+      //   last_reply_at: '',
+      //   reply_count: '',
+      //   tab: '',
+      //   title: '',
+      //   top: false,
+      //   visit_count: ''
+      // }
+      ]
     }
   },
 
@@ -66,21 +65,14 @@ export default {
       this.$http.get('/api/v1/topics', {
         params: {
           mdrender:false,
-          page: self.page
         }
       })
       .then(function (response) {
         if (response.success) {
-          
-          if(self.page === 1) {
-            self.list = response.data;
-          } else {
-            for (let i = 0;i<response.data.length; i++) {
-              self.list.push(response.data[i]);
-            }
-          }
-          self.page++;
+          self.list = response.data;
         }
+        console.log(self.list);
+        
       })
       .catch(function (error) {
         console.log(error);
@@ -94,13 +86,10 @@ export default {
     this.getList();
   },
   onReachBottom(){
-    // wx.showToast({title: '11111111111'});
-    this.getList();
+    wx.showToast({title: '11111111111'});
   },
   onPullDownRefresh(){
-    // wx.showToast({title: '222222222'});
-    this.page = 1;
-    this.getList();
+    wx.showToast({title: '222222222'});
   }
 }
 </script>

@@ -15,25 +15,25 @@ export default {
   data () {
     return {
       list: [
-        {
-        id: '',
-        author: {
-          avatar_url: '',
-          loginname: ''
-        },
-        author_id: '',
-        content: '',
-        create_at: '',
-        good: false,
-        last_reply_at: '',
-        reply_count: '',
-        tab: '',
-        title: '',
-        top: false,
-        visit_count: ''
-      }
+      //   {
+      //   id: '',
+      //   author: {
+      //     avatar_url: '',
+      //     loginname: ''
+      //   },
+      //   author_id: '',
+      //   content: '',
+      //   create_at: '',
+      //   good: false,
+      //   last_reply_at: '',
+      //   reply_count: '',
+      //   tab: '',
+      //   title: '',
+      //   top: false,
+      //   visit_count: ''
+      // }
       ],
-      page: 1
+      page:0
     }
   },
 
@@ -71,14 +71,7 @@ export default {
       })
       .then(function (response) {
         if (response.success) {
-          
-          if(self.page === 1) {
-            self.list = response.data;
-          } else {
-            for (let i = 0;i<response.data.length; i++) {
-              self.list.push(response.data[i]);
-            }
-          }
+          self.list = response.data;
           self.page++;
         }
       })
@@ -99,7 +92,7 @@ export default {
   },
   onPullDownRefresh(){
     // wx.showToast({title: '222222222'});
-    this.page = 1;
+    this.page = 0;
     this.getList();
   }
 }

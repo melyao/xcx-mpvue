@@ -19,7 +19,7 @@ axios.defaults.adapter = function(config) {
       url: baseURL + config.url,
       data: {
         ...config.params,
-        limit: 10
+        // limit: 10
       },
       success: res => {
         if (res.statusCode < 200 || res.statusCode > 300) {
